@@ -35,6 +35,17 @@
                 },
                 {
                     "id": 3,
+                    "name": "runtime-deps",
+                    "osType": "linux",
+                    "os": "alpine",
+                    "dockerfile": "runtime-deps/alpine-3.8/",
+                    "tags": [
+                        "2.0-deps-alpine",
+                        "2.1-deps-alpine"
+                    ]
+                },
+                {
+                    "id": 4,
                     "name": "runtime",
                     "osType": "linux",
                     "os": "xenial",
@@ -45,7 +56,7 @@
                     ]
                 },
                 {
-                    "id": 4,
+                    "id": 5,
                     "name": "runtime",
                     "osType": "linux",
                     "os": "bionic",
@@ -58,7 +69,7 @@
                     ]
                 },
                 {
-                    "id": 5,
+                    "id": 6,
                     "name": "runtime",
                     "osType": "linux",
                     "os": "xenial",
@@ -70,7 +81,7 @@
                     ]
                 },
                 {
-                    "id": 6,
+                    "id": 7,
                     "name": "runtime",
                     "osType": "linux",
                     "os": "bionic",
@@ -82,6 +93,19 @@
                         "2.1",
                         "bionic-latest",
                         "latest"
+                    ]
+                },
+                {
+                    "id": 8,
+                    "name": "runtime",
+                    "osType": "linux",
+                    "os": "alpine",
+                    "dockerfile": "2.2/alpine-3.8/dotnet-core/runtime/",
+                    "latest": true,
+                    "tags": [
+                        "2.1.2-alpine",
+                        "2.1-alpine",
+                        "alpine-latest"
                     ]
                 }
             ]
@@ -139,6 +163,18 @@
                         "2.1-bionic",
                         "2.1",
                         "latest"
+                    ]
+                },
+                {
+                    "id": 5,
+                    "name": "core-sdk",
+                    "osType": "linux",
+                    "os": "alpine",
+                    "dockerfile": "2.2/alpine-3.8/dotnet-core/sdk/",
+                    "tags": [
+                        "2.1.302-runtime-2.1.2-alpine",
+                        "2.1.302-alpine",
+                        "2.1-alpine"
                     ]
                 }
             ]
@@ -301,6 +337,40 @@
                         "build-latest",
                         "build"
                     ]
+                },
+                {
+                    "id": 13,
+                    "name": "runtime",
+                    "osType": "linux",
+                    "os": "alpine",
+                    "dockerfile": "2.2/alpine-3.8/aspnet-core/runtime/",
+                    "tags": [
+                        "2.1.2-alpine",
+                        "2.1-alpine"
+                    ]
+                },
+                {
+                    "id": 14,
+                    "name": "runtime-spa",
+                    "osType": "linux",
+                    "os": "alpine",
+                    "dockerfile": "2.2/alpine-3.8/aspnet-core/runtime-spa/",
+                    "tags": [
+                        "2.1.2-spa-node-8.11.2-alpine",
+                        "2.1-spa-alpine"
+                    ]
+                },
+                {
+                    "id": 15,
+                    "name": "build",
+                    "osType": "linux",
+                    "os": "alpine",
+                    "dockerfile": "2.2/alpine-3.8/aspnet-core/build/",
+                    "tags": [
+                        "2.1.2-sdk-2.1.302-build-alpine",
+                        "2.1.2-sdk-2.1.302-node-8.11.2-build-alpine",
+                        "2.1-build-alpine"
+                    ]
                 }
             ]
         }
@@ -338,8 +408,8 @@
                 "project_path=./TestWebApp",
                 "run_target=TestWebApp.dll"
             ],
-            "port" : 22345,
-            "httpCalls" : [
+            "port": 22345,
+            "httpCalls": [
                 "/",
                 "/api/"
             ]
@@ -354,8 +424,8 @@
                 "project_path=./TestWebApp",
                 "run_target=TestWebApp.dll"
             ],
-            "port" : 22346,
-            "httpCalls" : [
+            "port": 22346,
+            "httpCalls": [
                 "/",
                 "/api/"
             ]
@@ -370,8 +440,8 @@
                 "project_path=.",
                 "run_target=TestAngularServerSideRendering.dll"
             ],
-            "port" : 22347,
-            "httpCalls" : [
+            "port": 22347,
+            "httpCalls": [
                 "/"
             ]
         },
@@ -385,8 +455,8 @@
                 "project_path=.",
                 "run_target=TestAngularServerSideRendering.dll"
             ],
-            "port" : 22348,
-            "httpCalls" : [
+            "port": 22348,
+            "httpCalls": [
                 "/"
             ]
         },
@@ -422,8 +492,8 @@
                 "project_path=./TestWebApp",
                 "run_target=TestWebApp.dll"
             ],
-            "port" : 22349,
-            "httpCalls" : [
+            "port": 22349,
+            "httpCalls": [
                 "/",
                 "/api/"
             ]
@@ -438,8 +508,8 @@
                 "project_path=./TestWebApp",
                 "run_target=TestWebApp.dll"
             ],
-            "port" : 22350,
-            "httpCalls" : [
+            "port": 22350,
+            "httpCalls": [
                 "/",
                 "/api/"
             ]
@@ -454,8 +524,8 @@
                 "project_path=.",
                 "run_target=TestAngularServerSideRendering.dll"
             ],
-            "port" : 22351,
-            "httpCalls" : [
+            "port": 22351,
+            "httpCalls": [
                 "/"
             ]
         },
@@ -469,8 +539,8 @@
                 "project_path=.",
                 "run_target=TestAngularServerSideRendering.dll"
             ],
-            "port" : 22352,
-            "httpCalls" : [
+            "port": 22352,
+            "httpCalls": [
                 "/"
             ]
         }
