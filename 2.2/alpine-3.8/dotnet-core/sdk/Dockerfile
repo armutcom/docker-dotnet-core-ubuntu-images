@@ -1,7 +1,33 @@
-FROM armutcom/dotnet-core-runtime:2.1-deps-alpine
+FROM alpine:3.8
+
+# procps is very common in build systems, and is a reasonably small package
+RUN apk add --no-cache \
+    bzr \
+    git \
+    mercurial \
+    openssh-client \
+    subversion \
+    \
+    procps \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN apk add --no-cache icu-libs \
-    ca-certificates
+    ca-certificates \
+    \
+    # .NET Core dependencies
+    krb5-libs \
+    libgcc \
+    libintl \
+    libssl1.0 \
+    libstdc++ \
+    tzdata \
+    userspace-rcu \
+    zlib \
+    && apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
+    lttng-ust \
+    icu-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 
 ENV DOTNET_SDK_VERSION 2.1.302
 ENV DOTNET_SDK_DOWNLOAD_URL https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$DOTNET_SDK_VERSION/dotnet-sdk-$DOTNET_SDK_VERSION-linux-musl-x64.tar.gz

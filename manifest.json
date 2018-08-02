@@ -543,6 +543,48 @@
             "httpCalls": [
                 "/"
             ]
+        },
+        {
+            "id": 13,
+            "name": "core-runtime-2.1.2-tests-alpine",
+            "testAppPath": "tests/2.2/TestConsoleApp/",
+            "buildArgs": [
+                "base_image_runtime=armutcom/dotnet-core-runtime:2.1.2-alpine",
+                "base_image_build=armutcom/dotnet-core-sdk:2.1.302-runtime-2.1.2-alpine",
+                "project_path=./TestConsoleApp",
+                "run_target=TestConsoleApp.dll"
+            ]
+        },
+        {
+            "id": 14,
+            "name": "aspnet-runtime-2.1.2-tests-alpine",
+            "testAppPath": "tests/2.2/TestWebApp/",
+            "buildArgs": [
+                "base_image_runtime=armutcom/aspnet-core:2.1.2-alpine",
+                "base_image_build=armutcom/dotnet-core-sdk:2.1.302-runtime-2.1.2-alpine",
+                "project_path=./TestWebApp",
+                "run_target=TestWebApp.dll"
+            ],
+            "port": 22370,
+            "httpCalls": [
+                "/",
+                "/api/"
+            ]
+        },
+        {
+            "id": 15,
+            "name": "aspnet-runtime-spa-2.1.2-tests-alpine",
+            "testAppPath": "tests/2.2/TestAngularServerSideRendering/",
+            "buildArgs": [
+                "base_image_runtime=armutcom/aspnet-core:2.1.2-spa-node-8.11.2-alpine",
+                "base_image_build=armutcom/aspnet-core:2.1.2-sdk-2.1.302-build-alpine",
+                "project_path=.",
+                "run_target=TestAngularServerSideRendering.dll"
+            ],
+            "port": 22371,
+            "httpCalls": [
+                "/"
+            ]
         }
     ]
 }

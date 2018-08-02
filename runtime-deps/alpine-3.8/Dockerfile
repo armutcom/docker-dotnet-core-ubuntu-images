@@ -13,7 +13,8 @@ RUN apk add --no-cache \
     userspace-rcu \
     zlib \
     && apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
-    lttng-ust
+    lttng-ust \
+    icu-dev
 
 ENV DOTNET_RUNNING_IN_CONTAINER=true
 
