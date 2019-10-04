@@ -208,6 +208,20 @@
             }
         },
         {
+            "name": "3.0-buster",
+            "buildArgs": [
+                "DOTNET_SDK_VERSION=3.0.100"
+            ],
+            "sdkConfiguration": {
+                "name": "armutcom/dotnet-core-sdk",
+                "dockerfile": "images/dotnet-core/sdk/debian-10/",
+                "tags": [
+                    "3.0.100-buster",
+                    "3.0-buster"
+                ]
+            }
+        },
+        {
             "name": "2.2.5-bionic",
             "buildArgs": [
                 "DOTNET_RUNTIME_VERSION=2.2.5",
